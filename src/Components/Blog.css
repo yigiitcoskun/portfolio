@@ -1,0 +1,113 @@
+/* Blog Section */
+.blog-section {
+    margin-top: 100px;
+    padding: 200px;
+    background-color: #b5949426;
+    color: #b59494;
+    text-align: center;
+}
+
+.blog-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    margin-top: 0; /* Üst margin'i sıfırlıyoruz */
+    border: none;  /* Varsa border'ı kaldırıyoruz */
+    padding: 0;    /* Gereksiz padding'i sıfırlıyoruz */
+}
+
+/* Blog Container for layout */
+.blog-container {
+    display: flex;
+    justify-content: center; /* İçeriği ortalıyoruz */
+    flex-wrap: wrap;
+    gap: 50px; /* Blog postları arasındaki boşluk */
+    padding: 0px 20px; /* Sağdan ve soldan boşluk */
+}
+
+/* Blog Card Styles */
+.blog-card {
+    background-color: #f1eeee;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    margin: 0; /* Üst ve alt margin'leri sıfırlıyoruz */
+    transition: background-color 0.3s;
+}
+.blog-card:hover {
+    background-color: #fff;
+}
+
+/* Blog Image */
+.blog-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Hata düzeltilmiş */
+}
+.blog-heading-container {
+    text-align: left; /* Başlıkları sola yasla */
+}
+.blog-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.blog-read-more {
+    background-color: #b59494;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.blog-read-more-container {
+    text-align: center; /* Butonu ortala */
+    margin-top: 10px;
+}
+.blog-read-more:hover {
+    background-color: #a57d7d;
+}
+
+/* Mobil görünüm için stiller */
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 50px 20px; /* Padding'i küçült */
+    }
+
+    .blog-title {
+        font-size: 28px; /* Başlık boyutunu küçült */
+        margin-bottom: 20px;
+    }
+
+    .blog-container {
+        gap: 20px; /* Blog postları arasındaki boşluğu küçült */
+        padding: 0; /* Sağdan ve soldan boşluğu sıfırla */
+    }
+
+    .blog-card {
+        max-width: 100%; /* Kartların genişliğini tam genişlik yap */
+        padding: 10px; /* Kartların iç padding'ini küçült */
+    }
+
+    .blog-image {
+        width: 100%; /* Görüntü genişliğini tam genişlik yap */
+        height: auto; /* Yüksekliği otomatik yap */
+        border-radius: 8px; /* Köşeleri yuvarla */
+    }
+
+    .blog-heading {
+        font-size: 20px; /* Başlık boyutunu küçült */
+        margin-bottom: 10px;
+    }
+
+    .blog-read-more {
+        font-size: 16px; /* Buton yazı boyutunu küçült */
+        padding: 8px 16px; /* Butonun iç boşluklarını küçült */
+    }
+}

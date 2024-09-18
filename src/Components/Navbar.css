@@ -1,0 +1,110 @@
+/* Navbar genel stilleri */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #b59494; /* Navbar arka plan rengi */
+  padding: 8px 40px; /* Navbar daha ince */
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+}
+
+.navbar-logo {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+.navbar-logo .dot {
+  color: #61dafb; /* Farklı renkte nokta */
+}
+
+.navbar-right {
+  display: flex;
+  gap: 40px; /* Linkler arası boşluk artırıldı */
+  justify-content: flex-end; /* Linkleri sağa yasla */
+  flex: 1; /* Navbar'da sağa yaslama için genişlik ayarı */
+}
+
+.navbar-right a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600; /* Yazılar kalınlaştırıldı */
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-right a:hover {
+  color: #61dafb; /* Hover rengi */
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobil görünüm için */
+@media (max-width: 768px) {
+  .navbar-right {
+    margin-top: 20%;
+    position: fixed;
+    top: 60px; /* Menü navbar'ın hemen altından başlasın */
+    right: 0;
+    flex-direction: column;
+    background-color: #1e1e1e; /* Mobildeki navbar arka plan rengi */
+    width: 100%;
+    height: calc(100vh - 60px); /* Menü yüksekliği ekranın tamamını kapsayacak şekilde */
+    display: flex;
+    justify-content: flex-start; /* Linkleri yukarı hizala */
+    align-items: flex-start; /* Linkleri sola hizala */
+    transform: translateX(100%); /* Başlangıçta gizle */
+    transition: transform 0.3s ease-in-out; /* Geçiş animasyonu */
+    padding-top: 20px; /* Üstten boşluk bırak */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Gölgelendirme */
+    z-index: 999; /* Menü üstte görünsün */
+  }
+
+  .navbar-right.open {
+    transform: translateX(0); /* Menü açıldığında göster */
+  }
+
+  .navbar-right a {
+    padding: 15px 20px; /* Linklere padding ekle */
+    border-bottom: 1px solid #333; /* Linklerin altına sınır ekle */
+    font-size: 20px; /* Font boyutunu artır */
+  }
+
+  .navbar-right a:last-child {
+    border-bottom: none; /* Son linkin altındaki sınırı kaldır */
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  /* Menü açıldığında arka planın tıklanabilir olmasını sağla */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Yarı şeffaf arka plan */
+    z-index: 998; /* Menüden altta görünsün */
+  }
+
+  .menu-overlay.open {
+    display: block;
+  }
+}

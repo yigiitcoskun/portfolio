@@ -1,0 +1,131 @@
+/* Resume kısmının tüm ekranı kaplamasını sağlar */
+.resume-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: #b5949426; /* Arka plan rengi */
+  color: #b59494;
+  height: 100vh; /* Ekranın tamamını kaplasın */
+  position: relative; /* İçerik ve arka plan için */
+}
+
+/* İçerik hizalaması */
+.resume-content {
+  display: flex;
+  flex-direction: row; /* Yan yana hizalama */
+  align-items: center; /* Fotoğrafı ve butonu dikey olarak ortalamak için */
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  position: relative; /* İçerik ve dik çizgi arasındaki ilişkiyi korur */
+  z-index: 2; /* Diğer öğelerin üstünde olacak şekilde ayarla */
+  margin-top: 100px; /* İçeriği biraz daha aşağıya taşır */
+}
+
+/* Metin ve başlık düzenlemeleri */
+.resume-text-container {
+  max-width: 500px;
+  text-align: left;
+  z-index: 2; /* Diğer öğelerin üstünde olacak şekilde ayarla */
+}
+
+.resume-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.resume-text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Dik çizgi stili */
+.resume-divider {
+  height: 300px;
+  width: 2px;
+  background-color: #b59494;
+  margin: 0 40px;
+  z-index: 1; /* İçeriğin altında olacak şekilde ayarla */
+}
+
+/* Fotoğraf stili */
+.resume-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40px; /* Dik çizgiden uzaklık sağlamak için */
+}
+
+.resume-photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px; /* Buton ile fotoğraf arasına boşluk eklemek için */
+}
+
+/* CV indirme bağlantısı */
+.resume-download {
+  text-decoration: none;
+  font-size: 18px;
+  color: #b59494;
+  background-color: #fff; /* Butonun arka plan rengi */
+  border: 2px solid #b59494; /* Butonun kenarlığı */
+  border-radius: 5px; /* Butonun köşe yuvarlatması */
+  padding: 10px 20px; /* Butonun iç boşlukları */
+  cursor: pointer; /* Buton üzerinde fare ile gezinirken işaretçi değişir */
+  transition: background-color 0.3s, color 0.3s; /* Butonun renk geçiş animasyonu */
+}
+
+/* Butonun üzerine gelindiğinde stili */
+.resume-download:hover {
+  background-color: #b59494;
+  color: #fff;
+}
+
+/* Mobil görünüm için stiller */
+@media (max-width: 768px) {
+  .resume-content {
+      flex-direction: column; /* Dikey hizalama */
+      padding: 20px; /* İç boşlukları küçült */
+      z-index: 2; /* Sosyal ikonların altında kalmasını sağlamak için */
+      margin-top: 70px; /* İçeriği yukarı taşır */
+  }
+
+  .resume-divider {
+      display: none;
+  }
+
+  .resume-text-container {
+      max-width: 100%;
+      text-align: center; /* Metni ortalamak için */
+  }
+
+  .resume-title {
+      font-size: 24px; /* Başlık boyutunu küçült */
+      margin-bottom: 10px;
+  }
+
+  .resume-text {
+      font-size: 16px; /* Metin boyutunu küçült */
+      line-height: 1.5;
+  }
+
+  .resume-photo {
+      margin-right: 0; /* Dik çizgi etrafındaki boşluğu kaldır */
+      margin-bottom: 20px; /* Fotoğraf ile buton arasına boşluk ekle */
+  }
+
+  .resume-photo img {
+      width: 150px; /* Fotoğraf boyutunu küçült */
+      height: 150px;
+  }
+
+  .resume-download {
+      font-size: 16px; /* Buton yazı boyutunu küçült */
+      padding: 8px 16px; /* Butonun iç boşluklarını küçült */
+  }
+}

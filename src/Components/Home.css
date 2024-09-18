@@ -1,0 +1,156 @@
+/* Home section stilleri */
+.home-section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #b5949426;
+  color: #b59494;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Sol taraftaki içerik */
+.home-content {
+  position: relative; /* İçeriğin animasyon üstünde kalmasını sağlamak için */
+  text-align: center; /* Metni ortalamak için */
+  z-index: 2; /* İçeriği animasyonun üstünde göstermek için */
+  margin-bottom: 80px; /* Profil resmine alan bırakmak için */
+}
+
+/* Başlık stilleri */
+.home-title {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px; /* Çizgi ile başlık arasına yeterli boşluk eklemek için */
+}
+
+/* Alt başlık stilleri */
+.home-subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 50px; /* Çizgi ile alt başlık arasına yeterli boşluk eklemek için */
+}
+
+/* Çizgi animasyonları */
+.animation-line {
+  position: absolute;
+  height: 6px; /* Çizgi kalınlığı */
+  background-color: #b59494; /* Animasyon rengi */
+  border-radius: 3px; /* Kenarları yumuşatmak için */
+  z-index: 1; /* Animasyonu içerikten arka planda göstermek için */
+}
+
+.animation-line-top {
+  top: 10%; /* Üst çizgi konumu */
+  width: 0%; /* Başlangıçta çizgi görünmüyor */
+  left: 50%;
+  transform: translateX(-50%); /* Orta konum */
+  animation: lineAnimationTop 4s infinite; /* Döngüsel animasyon */
+}
+
+.animation-line-bottom {
+  bottom: 0px; /* Alt çizgi konumu */
+  width: 0%; /* Başlangıçta çizgi görünmüyor */
+  left: 50%;
+  transform: translateX(-50%); /* Orta konum */
+  animation: lineAnimationBottom 4s infinite; /* Döngüsel animasyon */
+}
+
+/* Üst çizgi animasyonları */
+@keyframes lineAnimationTop {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+/* Alt çizgi animasyonları */
+@keyframes lineAnimationBottom {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+/* Arka plan animasyonu */
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Arka planda olacak */
+  background: linear-gradient(120deg, #ede9e9, #e4e4e4); /* Daha açık renk geçişleri */
+  background-size: 150% 150%; /* Daha geniş bir alan */
+  animation: backgroundAnimation 8s ease-in-out infinite; /* Daha hızlı geçiş */
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Social icons container */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 20px; /* Adjust the position as needed */
+}
+
+/* Icon styles */
+.icon {
+  color: #b59494; /* Match with the overall color theme */
+  font-size: 30px; /* Size of the icons */
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #b5949426; /* Slight hover effect */
+}
+
+/* Mobil görünüm için stiller */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 48px; /* Başlık boyutunu küçült */
+    margin-bottom: 10px;
+  }
+
+  .home-subtitle {
+    font-size: 18px; /* Alt başlık boyutunu küçült */
+    margin-bottom: 20px;
+  }
+
+  .animation-line-top,
+  .animation-line-bottom {
+    height: 4px; /* Çizgi kalınlığını küçült */
+  }
+
+  .social-icons {
+    bottom: 10px; /* Sosyal ikonları yukarı taşı */
+    gap: 15px;
+  }
+
+  .icon {
+    font-size: 24px; /* İkon boyutunu küçült */
+  }
+}

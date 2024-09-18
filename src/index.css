@@ -5,9 +5,41 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobil görünüm için genel stiller */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar .nav-links a {
+      margin: 10px 0;
+  }
+  
+  .blog-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .blog-card {
+      width: 100%;
+      max-width: none; /* Mobilde sınırlama yok */
+  }
 }

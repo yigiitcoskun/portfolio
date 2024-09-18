@@ -1,0 +1,115 @@
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px); /* Sayfanın yüksekliğinin ortasında kalmasını sağlamak için */
+    padding-bottom: 2%;
+    background-color: #b5949426; /* Arka plan rengi */
+    color: #b59494; /* Yazı rengi */
+}
+
+.contact-form-container {
+    flex: 1;
+    padding: 20px;
+    max-width: 500px; /* Formun genişliğini küçültmek için */
+    background-color: #fff; /* Form arka plan rengi */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px; /* Sağdaki bilgilerin ayrılması için margin */
+}
+
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px; /* Alanlar arasındaki boşluğu küçültmek için */
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 120px; /* Textarea'nın yüksekliğini küçültmek için */
+    resize: none;
+}
+
+button {
+    background-color: #b59494;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #a57d7d;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 20px;
+    border-left: 2px solid #b59494;
+    max-width: 300px; /* Bilgilerin genişliğini kısıtlamak için */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Dikey ortalamak için */
+    align-items: flex-start; /* Sol tarafta hizalamak için */
+}
+
+.contact-info-item {
+    margin-bottom: 15px; /* Öğeler arasındaki boşluğu küçültmek için */
+    font-size: 18px;
+}
+
+.contact-info-item a {
+    color: #b59494;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info-item i {
+    margin-right: 10px;
+}
+
+.contact-info-item:hover a {
+    text-decoration: none;
+    color: #a57d7d;
+}
+@media (max-width: 768px) {
+    .contact-section {
+        height: auto; /* Mobilde yükseklik otomatik ayarla */
+        flex-direction: column; /* Dikey hizalamayı sağla */
+        padding: 20px; /* Padding'i küçült */
+    }
+
+    .contact-form-container {
+        margin-bottom: 20px; /* Bilgi bölümünden ayrılmak için margin */
+        max-width: 100%; /* Form genişliğini %100 yap */
+    }
+
+    .contact-info {
+        border-left: none; /* Dik çizgiyi kaldır */
+        max-width: 100%; /* Bilgilerin genişliğini %100 yap */
+    }
+
+    .contact-info-item {
+        font-size: 16px; /* Yazı boyutunu küçült */
+        margin-bottom: 10px; /* Öğeler arasındaki boşluğu küçült */
+    }
+}
