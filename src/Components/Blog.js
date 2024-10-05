@@ -5,10 +5,17 @@ function Blog() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/blog/api/blogposts/')
-            .then(response => response.json())
-            .then(data => setPosts(data));
+        fetch('https://blogproject-production-37b1.up.railway.app/api/blogposts/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => setPosts(data))
+            .catch(error => console.error('Fetch error:', error));
     }, []);
+    
 
     return (
         <div id="blog" className="blog-section">

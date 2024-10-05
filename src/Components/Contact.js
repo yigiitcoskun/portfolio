@@ -20,7 +20,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/send_contact_email/', {
+      const response = await fetch('https://blogproject-production-37b1.up.railway.app/api/send_contact_email/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
